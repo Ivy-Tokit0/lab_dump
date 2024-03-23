@@ -6,6 +6,7 @@ typedef struct calendar {
   char *name, *description;
   int date;
 } cal;
+
 int i;
 
 cal* create() {
@@ -41,18 +42,18 @@ void read(cal *d) {
 }
 
 void display(cal* d) {
-  for (i=0;i<7;i++) {
-    if (d[i].date!=-1)
-      printf("%d\t%s\t%s\n",d[i].date,d[i].name,d[i].description);
-  }
+	for (i=0;i<7;i++) {
+		if (d[i].date!=-1)
+			printf("%d\t%s\t%s\n",d[i].date,d[i].name,d[i].description);
+	}
 }
 
 void deallocate(cal* d) {
-  for (i=0;i<7;i++) {
-    free(d[i].name);
-    free(d[i].description);
-  }
-  free(d);
+	for (i=0;i<7;i++) {
+		free(d[i].name);
+		free(d[i].description);
+	}
+	free(d);
 }
 
 int main() {
